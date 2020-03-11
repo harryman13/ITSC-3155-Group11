@@ -1,6 +1,6 @@
 from Invoice import Invoice
 products = {}
-total_amount = 0
+total_amount = 0.0
 repeat = ''
 while True:
     product = input("What is your product : ")
@@ -13,6 +13,6 @@ while True:
     if repeat == "n":
         break
 
-    total_amount = Invoice().totalImpurePrice(products)
+total_amount = Invoice().totalPurePrice(products)
 
-    print("Your total pure price is: ", total_amount)
+print("Your total pure price is: ", total_amount)
