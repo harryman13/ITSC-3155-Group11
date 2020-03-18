@@ -21,3 +21,8 @@ def test_CanCalculateTotalDiscount(invoice, products):
 def test_CanCalculateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
+
+def test_addProduct(invoice, products):
+    temp = invoice.addProduct(10, 5.0, 10)
+    products["apple"] = temp
+    assert products == {'pen':{'qnt': 10, 'unit_price': 3.75, 'discount': 5},'notebook':{'qnt': 5, 'unit_price': 7.5, 'discount': 10},'apple': {'qnt': 10, 'unit_price': 5.0, 'discount': 10}}
